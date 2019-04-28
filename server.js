@@ -1,7 +1,10 @@
 const express = require("express");
 const books = require("./data/books.json");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 app.get("/books", (_, res) => res.send(books));
 

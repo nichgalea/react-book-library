@@ -31,7 +31,8 @@ const config: Configuration = {
               camelCase: "dashes"
             }
           },
-          "sass-loader"
+          "sass-loader",
+          { loader: "postcss-loader", options: { plugins: [require("autoprefixer")] } }
         ]
       }
     ]
