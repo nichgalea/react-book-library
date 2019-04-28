@@ -41,7 +41,7 @@ export default function Sidenav() {
         </ul>
 
         <div className={styles.accountLinkContainer}>
-          <NavLink to="/my-account" exact className={styles.link} activeClassName={styles.linkActive}>
+          <NavLink to="/my-account" exact className={styles.accountLink}>
             My Account
           </NavLink>
         </div>
