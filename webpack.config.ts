@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { Configuration } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import { TsConfigPathsPlugin } from "awesome-typescript-loader";
 
 const basePath = resolve(__dirname, "src");
 
@@ -10,7 +11,8 @@ const config: Configuration = {
   mode: "development",
   resolve: {
     extensions: [".ts", ".tsx", ".js", "jsx", ".scss"],
-    mainFiles: ["index"]
+    mainFiles: ["index"],
+    plugins: [new TsConfigPathsPlugin()]
   },
   module: {
     rules: [
