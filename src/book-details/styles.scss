@@ -1,0 +1,29 @@
+.book-details {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-table {
+  margin: 16px 0 0 16px;
+  min-width: 300px;
+  font-size: 12px;
+
+  th {
+    text-align: right;
+  }
+
+  th,
+  td {
+    padding: 8px 4px;
+    background: white;
+  }
+}
+
+.link {
+  margin: 16px 0 0 16px;
+
+  a {
+    color: #049ae5;
+  }
+}
