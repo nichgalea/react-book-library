@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { Configuration } from "webpack";
+import { Configuration, DefinePlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { TsConfigPathsPlugin } from "awesome-typescript-loader";
 
@@ -44,6 +44,10 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: `${basePath}/index.html`
+    }),
+    new DefinePlugin({
+      API_URL: JSON.stringify("http://localhost:9001"),
+      BOOK_IMAGE_BASE: JSON.stringify("http://www.100bestbooks.xyz/static")
     })
   ]
 };
