@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import Sidenav from "sidenav";
 import Browse from "browse";
@@ -18,6 +18,8 @@ export default function App() {
             <Route path="/checked-out" exact render={() => "Checked Out"} />
             <Route path="/reserved" exact render={() => "Reserved"} />
             <Route path="/my-account" exact render={() => "My Account"} />
+
+            <Route render={() => <Redirect to="/" />} />
           </Switch>
         </main>
       </div>

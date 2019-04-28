@@ -1,4 +1,6 @@
-import React, { useState, Component, ChangeEvent } from "react";
+import React, { Component, ChangeEvent } from "react";
+import { debounce } from "lodash";
+import Fuse from "fuse.js";
 
 import { Book as BookModel } from "models";
 import Book from "book";
@@ -11,6 +13,8 @@ interface State {
 }
 
 export default class Browse extends Component<{}, State> {
+  private originalBookList: BookModel[] = [];
+
   constructor(props) {
     super(props);
 
@@ -20,12 +24,22 @@ export default class Browse extends Component<{}, State> {
     };
 
     this.handleSearchChange = this.handleSearchChange.bind(this);
+    this.searchBooks = debounce(this.searchBooks.bind(this), 500);
   }
 
   componentDidMount() {
     fetch("http://localhost:9001/books")
       .then(r => r.json())
-      .then((books: BookModel[]) => this.setState({ books }));
+      .then((books: BookModel[]) => {
+        this.originalBookList = books;
+        this.setState({ books });
+      });
+  }
+
+  componentDidUpdate(_: {}, prevState: Readonly<State>) {
+    if (prevState.search !== this.state.search) {
+      this.searchBooks();
+    }
   }
 
   render() {
@@ -52,5 +66,18 @@ export default class Browse extends Component<{}, State> {
 
   handleSearchChange(e: ChangeEvent<HTMLInputElement>) {
     this.setState({ search: e.currentTarget.value });
+  }
+
+  searchBooks() {
+    if (this.state.search.length > 0) {
+      const results = new Fuse(this.state.books, {
+        keys: ["title", "author"],
+        threshold: 0.2
+      }).search(this.state.search);
+
+      this.setState({ books: results });
+    } else {
+      this.setState({ books: this.originalBookList });
+    }
   }
 }
