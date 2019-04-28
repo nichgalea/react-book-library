@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import styles from "./styles.scss";
 
@@ -20,10 +21,30 @@ export default function Sidenav() {
         </div>
 
         <ul className={styles.links}>
-          <li className={styles.linksListItem}>Books</li>
-          <li className={styles.linksListItem}>Checked Out</li>
-          <li className={styles.linksListItem}>Reserved</li>
+          <li className={styles.linksListItem}>
+            <NavLink to="/" exact className={styles.link} activeClassName={styles.linkActive}>
+              Browse
+            </NavLink>
+          </li>
+
+          <li className={styles.linksListItem}>
+            <NavLink to="/checked-out" exact className={styles.link} activeClassName={styles.linkActive}>
+              Checked Out
+            </NavLink>
+          </li>
+
+          <li className={styles.linksListItem}>
+            <NavLink to="/reserved" exact className={styles.link} activeClassName={styles.linkActive}>
+              Reserved
+            </NavLink>
+          </li>
         </ul>
+
+        <div className={styles.accountLinkContainer}>
+          <NavLink to="/my-account" exact className={styles.link} activeClassName={styles.linkActive}>
+            My Account
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

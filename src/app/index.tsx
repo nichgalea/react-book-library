@@ -13,10 +13,10 @@ export default function App() {
 
         <main className={styles.mainContent}>
           <Switch>
-            <Route path="/" render={() => "Books"} />
-            <Route path="/books" render={() => "Books"} />
-            <Route path="/checked-out" render={() => "Checked Out"} />
-            <Route path="/reserved" render={() => "Reserved"} />
+            <Route path="/" exact render={() => "Browse"} />
+            <Route path="/checked-out" exact render={() => "Checked Out"} />
+            <Route path="/reserved" exact render={() => "Reserved"} />
+            <Route path="/my-account" exact render={() => "My Account"} />
           </Switch>
         </main>
       </div>
