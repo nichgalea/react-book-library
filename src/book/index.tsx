@@ -12,7 +12,7 @@ interface Props {
 
 export default function Book({ book, index }: Props) {
   return (
-    <Link to={`/books/${index}`}>
+    <Link to={`/books/${index}`} title="Show details">
       <div className={styles.book}>
         <img className={styles.image} src={`${BOOK_IMAGE_BASE}/${book.imageLink}`} />
 

@@ -4,9 +4,13 @@
   flex-wrap: wrap;
 }
 
+.info-section {
+  width: 300px;
+  padding: 0 8px;
+}
+
 .info-table {
-  margin: 16px 0 0 16px;
-  min-width: 300px;
+  width: 100%;
   font-size: 12px;
 
   th {
@@ -21,9 +25,62 @@
 }
 
 .link {
-  margin: 16px 0 0 16px;
+  margin: 16px 0;
+  font-size: 14px;
 
   a {
     color: #049ae5;
+  }
+}
+
+.status {
+  font-size: 12px;
+  color: gray;
+}
+
+.checkout-date {
+  color: green;
+}
+
+.due-date {
+  color: crimson;
+}
+
+.buttons {
+  margin: 16px 0 0 16px;
+  text-align: right;
+}
+
+.checkout,
+.reserve {
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.checkout {
+  background: #049ae5;
+  color: white;
+
+  &:active {
+    color: darken(white, 2%);
+    background: darken(#049ae5, 2%);
+  }
+}
+
+.reserve {
+  margin-left: 8px;
+  background: white;
+  color: #049ae5;
+
+  &:active {
+    color: darken(#049ae5, 2%);
+    background: darken(white, 2%);
   }
 }

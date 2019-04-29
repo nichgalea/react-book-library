@@ -8,3 +8,8 @@ export interface Book {
   title: string;
   year: number;
 }
+
+export interface BookCheckout {
+  id: number;
+  date: string;
+}

@@ -1,9 +1,13 @@
-import { Book } from "models";
+import { Book, BookCheckout } from "models";
 
 export interface BooksState {
   list: Book[];
+  checkedOut: BookCheckout[];
+  reserved: number[];
 }
 
 export const initialBooksState: BooksState = {
-  list: []
+  list: [],
+  checkedOut: [],
+  reserved: []
 };
