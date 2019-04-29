@@ -4,6 +4,14 @@
   flex-wrap: wrap;
 }
 
+.book-image {
+  width: 320px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .info-section {
   width: 300px;
   padding: 0 8px;

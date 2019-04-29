@@ -42,7 +42,7 @@ export default class BookDetails extends Component<Props> {
 
     return (
       <div className={styles.bookDetails}>
-        <img src={`${BOOK_IMAGE_BASE}/${book.imageLink}`} />
+        <div className={styles.bookImage} style={{ backgroundImage: `url(${BOOK_IMAGE_BASE}/${book.imageLink})` }} />
 
         <div className={styles.infoSection}>
           <table className={styles.infoTable}>

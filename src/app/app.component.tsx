@@ -34,7 +34,6 @@ export default class App extends Component<Props> {
               <Route path="/" exact component={Browse} />
               <Route path="/checked-out" exact render={() => "Checked Out"} />
               <Route path="/reserved" exact render={() => "Reserved"} />
-              <Route path="/my-account" exact render={() => "My Account"} />
               <Route path="/books/:id" exact component={BookDetails} />
 
               <Route render={() => <Redirect to="/" />} />
