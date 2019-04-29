@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
+import { Book } from "models";
 import Sidenav from "sidenav";
 import Browse from "browse";
 import BookDetails from "book-details";
-import { Book } from "models";
+import Reserved from "reserved";
 
 import styles from "./styles.scss";
 
@@ -33,7 +34,7 @@ export default class App extends Component<Props> {
             <Switch>
               <Route path="/" exact component={Browse} />
               <Route path="/checked-out" exact render={() => "Checked Out"} />
-              <Route path="/reserved" exact render={() => "Reserved"} />
+              <Route path="/reserved" exact component={Reserved} />
               <Route path="/books/:id" exact component={BookDetails} />
 
               <Route render={() => <Redirect to="/" />} />
