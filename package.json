@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm start",
     "start": "npm-run-all -p app api",
     "app": "webpack-dev-server --config ./webpack.config.ts --open",
     "api": "node server"
