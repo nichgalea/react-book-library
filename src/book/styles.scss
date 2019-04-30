@@ -52,3 +52,22 @@
   font-size: 12px;
   color: gray;
 }
+
+.due-date {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 8px;
+
+  > div {
+    z-index: 1;
+
+    &:first-child {
+      color: gray;
+    }
+
+    &:nth-child(2) {
+      color: crimson;
+    }
+  }
+}

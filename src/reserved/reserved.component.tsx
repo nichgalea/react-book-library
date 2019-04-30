@@ -11,6 +11,8 @@ interface Props {
 export default function Reserved({ books }: Props) {
   return (
     <div className={styles.reserveList}>
+      {books.length === 0 ? <p className={styles.reservedEmpty}>You have no reserved books.</p> : null}
+
       {books.map((book, i) => (
         <div key={i} className={styles.reserveListItem}>
           <Book index={i} book={book} />

@@ -1,14 +1,14 @@
-.reserve-list {
+.checked-out-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 16px 0;
 }
 
-.reserve-list-item {
+.checked-out-list-item {
   margin-bottom: 16px;
 }
 
-.reserved-empty {
+.checked-out-empty {
   font-size: 12px;
 }

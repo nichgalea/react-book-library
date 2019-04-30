@@ -6,6 +6,7 @@ import Sidenav from "sidenav";
 import Browse from "browse";
 import BookDetails from "book-details";
 import Reserved from "reserved";
+import CheckedOut from "checked-out";
 
 import styles from "./styles.scss";
 
@@ -33,7 +34,7 @@ export default class App extends Component<Props> {
           <main className={styles.mainContent}>
             <Switch>
               <Route path="/" exact component={Browse} />
-              <Route path="/checked-out" exact render={() => "Checked Out"} />
+              <Route path="/checked-out" exact component={CheckedOut} />
               <Route path="/reserved" exact component={Reserved} />
               <Route path="/books/:id" exact component={BookDetails} />
 
